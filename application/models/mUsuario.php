@@ -10,16 +10,35 @@
 			parent::__construct();
 		}
 
-		function registrarUsuario($param){
+		function registrarUsuario($param)
+		{
 			$campos = array(
-				'nombre_usuario' => $param['nombre_usuario'],
-				'clave' => $param['clave'],
-				'id_persona' => $param['id_persona']
+				'username' => $param['usuario'],
+				'useremail' => $param['correo'],
+				'userpass' => $param['password'],
+				'userstatus' => 'Y',
+				'tokencode' => '123',
+				'id_question_1' => $param['p1'],
+				'id_question_2' => $param['p2'],
+				'id_question_3' => $param['p3']
 			);
-			$this->db->insert('usuarios',$campos);
+			$this->db->insert('tbl_users',$campos);
+			return $this->db->insert_id();
 		}
 
-		function eliminarUsuario($idU){
+		function registrarPreguntas($param)
+		{
+			$campos = array(
+				'id_user' => $param['id_user'],
+				'answer_1' => $param['a1'],
+				'answer_2' => $param['a2'],
+				'answer_3' => $param['a3']
+			);
+			$this->db->insert('tbl_answers',$campos);
+		}
+
+		function eliminarUsuario($idU)
+		{
 			$campos = array(
 				'id_persona' => $idU
 			);

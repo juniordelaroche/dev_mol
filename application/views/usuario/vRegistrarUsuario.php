@@ -35,7 +35,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Ingrese los campos solicitados</p>
 
-    <form action="<?php echo base_url() ?>cUsuario/registrarUsuario" method="POST">
+    <form action="<?php echo base_url() ?>cUsuario/datosUsuario" method="POST">
       <div class="form-group has-feedback">
       	
       		<span class="fa fa-user form-control-feedback"></span>
@@ -55,7 +55,7 @@
       <label for="">Primera pregunta</label>
       <div class="form-group">
       	<select class="cboPregunta form-control" name="p1" id="">
-      		<option value="1">--Seleccione una pregunta--</option>
+      		<option value="">--Seleccione una pregunta--</option>
       	</select>
       </div>
       <div class="form-group has-feedback">
@@ -65,7 +65,7 @@
       <label for="">Segunda pregunta</label>
       <div class="form-group">
       	<select class="cboPregunta form-control" name="p2" id="">
-      		<option value="1">--Seleccione una pregunta--</option>
+      		<option value="">--Seleccione una pregunta--</option>
       	</select>
       </div>
       <div class="form-group has-feedback">
@@ -75,12 +75,12 @@
       <label for="">Tercera pregunta</label>
       <div class="form-group">
       	<select class="cboPregunta form-control" name="p3" id="">
-      		<option value="1">--Seleccione una pregunta--</option>
+      		<option value="">--Seleccione una pregunta--</option>
       	</select>
       </div>
       <div class="form-group has-feedback">
 		<span class="fa fa-pencil form-control-feedback"></span>
-		<input type="text" class="form-control" placeholder="respuesta" name="txtresp4" required="">
+		<input type="text" class="form-control" placeholder="respuesta" name="txtresp3" required="">
       </div>
       <div class="row">
         <!-- /.col -->
