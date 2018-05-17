@@ -21,7 +21,7 @@
 			//datos para tabla tbl_users
 			$param['usuario'] = $this->input->post('txtusuario');
 			$param['correo'] = $this->input->post('txtcorreo');
-			$param['password'] = $this->input->post('txtpass');
+			$param['password'] = sha1($this->input->post('txtpass'));
 			$param['p1'] = $this->input->post('p1');
 			$param['p2'] = $this->input->post('p2');
 			$param['p3'] = $this->input->post('p3');

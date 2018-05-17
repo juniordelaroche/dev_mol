@@ -29,36 +29,30 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Dev</b>MOL</a>
+   <b>Dev</b>MOL
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Logueate para iniciar sesión</p>
+    <p class="login-box-msg">Ingrese su correo eléctronico</p>
 
-    <form action="<?php echo base_url() ?>cLogin/ingresar" method="POST">
+    <form action="<?php echo base_url() ?>cPassword/getPreguntas" method="POST">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="usuario" name="txtusuario">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="contraseña" name="txtclave">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <input type="text" class="form-control" placeholder="correo electrónico" name="txtcorreo">
+        <span class="fa fa-envelope form-control-feedback"></span>
       </div>
       <div class="row">
         <!-- /.col -->
         <div class="col-xs-6">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Verificar</button>
         </div>
         <div>
-          <a href="<?php echo base_url() ?>cUsuario" class="btn btn-success btn-flat">Registrarme</a>
+          <a href="<?php echo base_url() ?>cLogin" class="btn btn-success btn-flat">Inicia sesión</a>
         </div>
         <!-- /.col -->
       </div>
     </form>
     <!-- /.social-auth-links -->
-    <hr>
-    <a href="<?php echo base_url() ?>cPassword">Olvide mi contraseña</a>
-    <b><?php echo $mensaje ?></b>
+    <b><?php //echo $mensaje ?></b>
   </div>
   <!-- /.login-box-body -->
 </div>
@@ -73,4 +67,3 @@
 
 </body>
 </html>
-

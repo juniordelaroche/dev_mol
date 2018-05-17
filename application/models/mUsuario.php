@@ -45,5 +45,42 @@
 
 			$this->db->delete('usuarios',$campos);
 		}
+		function getRespuestas($param)
+		{
+			//obtiene las respuestas segun el correo de la persona
+			$this->db->select('a.answer_1, a.answer_2, a.answer_3');
+			$this->db->from('tbl_answers a');
+			$this->db->join('tbl_users u', 'a.id_user = u.userid');
+			$this->db->where('u.useremail',$param);
+
+			$r = $this->db->get();
+			return $r->result();
+
+		}
+		function getPreguntas($param)
+		{
+			/*busca los id de las preguntas de la tabla tbl_user relacionados con el 
+			correo del usuario correspondiente*/
+
+			$this->db->select('id_question_1, id_question_2, id_question_3');
+			$this->db->from('tbl_users');
+			$this->db->where('useremail',$param);
+			$preguntas = $this->db->get();
+			foreach ($preguntas->result() as $row) {
+				$id1 = $row->id_question_1;
+				$id2 = $row->id_question_2;
+				$id3 = $row->id_question_3;
+			}
+			/*busca las preguntas en la tabla tbl_questions con los id previamente seleccionados
+			*/
+			$this->db->select('question');
+			$this->db->from('tbl_questions');
+			$this->db->where('id',$id1);
+			$this->db->or_where('id',$id2);
+			$this->db->or_where('id',$id3);
+			$resultado = $this->db->get();
+			return $resultado;//->result();
+
+		}
 	}
 ?>
