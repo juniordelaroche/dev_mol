@@ -14,7 +14,7 @@
 		function getPreguntas(){
 		$s = $this->input->post('sitreg');
 		$resultado = $this->mPreguntas->getPreguntas($s);
-
+		
 		//convertir resultado a jquery 
 		echo json_encode($resultado);
 		}

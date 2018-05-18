@@ -9,3 +9,4 @@ $.post(baseurl+"cPreguntas/getPreguntas",
 			$('.cboPregunta').append('<option value="'+item.id+'">'+item.question+'</option>');
 		});
 	});
+
